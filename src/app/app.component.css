@@ -1,0 +1,35 @@
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 70px;
+  background-color: lightblue;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 70px;
+}
+
+.left-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  display: block;
+  margin-right: 20px;
+  color: lightseagreen;
+}

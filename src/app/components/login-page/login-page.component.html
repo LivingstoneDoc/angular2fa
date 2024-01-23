@@ -1,0 +1,35 @@
+<!-- <p>login-page works!</p> -->
+
+<div class="login-page">
+  <h1>Login Here</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="proceedLogin()" *ngIf="show1fa">
+    <div>
+      <div class="field field-email">
+        <label for="login">Login:</label>
+        <input formControlName="login" required type="text">
+      </div>
+      <div class="field field-pass">
+        <label for="password">Password:</label>
+        <input formControlName="password" required type="password">
+      </div>
+    </div>
+    <div class="btns">
+      <button>Log in</button>
+      <a routerLink="/reg">New user?</a>
+    </div>
+  </form>
+
+  <qrcode [qrdata]="qrDataString" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  <form [formGroup]="login2faForm" (ngSubmit)="proceed2FA()" *ngIf="show2fa">
+    <div>
+      <div class="field field-code">
+        <label for="code">Code:</label>
+        <input formControlName="code" required type="number">
+      </div>
+    </div>
+    <div class="btn-2fa-login">
+      <button>Log in</button>
+    </div>
+  </form>
+  <div>
+  </div>

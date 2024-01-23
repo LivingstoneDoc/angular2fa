@@ -1,0 +1,80 @@
+.login-page {
+  display: block;
+  width: 500px;
+  padding: 20px 0;
+  margin: 100px auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: lightblue;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.field label {
+  font-size: 14px;
+}
+
+.field input {
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+}
+
+.field-pass {
+  margin-top: 10px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 258px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  background-color: lightseagreen;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  background-color: red;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 0px 20px;
+  border-radius: 4px;
+}
+
+qrcode {
+  display: block;
+  margin: 20px auto;
+  width: max-content;
+}
