@@ -41,17 +41,19 @@ export class LoginPageComponent {
       // } else {
       //   this.toastr.warning('Please enter valid data');
       // }
-      this.service.loginReq(this.loginForm.value).subscribe(res => {
-        console.log(res);
-        this.qrDataString = (res as any).qrImage;
-        sessionStorage.setItem("auth_session", (res as any).auth_session)
-        this.show1fa = false;
-        this.show2fa = true;
+      this.service.loginReq(this.loginForm.value).subscribe({
+        next: data => {
+          console.log(data);
+          this.qrDataString = (data as any).qrImage;
+          sessionStorage.setItem("auth_session", (data as any).auth_session)
+          this.show1fa = false;
+          this.show2fa = true;
+        }, 
+        error: error => {
+          this.toastr.warning('Please enter valid data');
+        }
       });
-
-
     }
-
   }
 
   proceed2FA() {
@@ -65,10 +67,15 @@ export class LoginPageComponent {
       auth_session: sessionStorage.getItem("auth_session"),
     }
 
-    this.service.loginReq(data).subscribe(response => {
-      console.log(response);
-      sessionStorage.setItem("isAuthorized", "true")
-      this.router.navigate(['']);
+    this.service.loginReq(data).subscribe({
+      next: response => {
+        console.log(response);
+        sessionStorage.setItem("isAuthorized", "true")
+        this.router.navigate(['']);
+      },
+      error: error => {
+        this.toastr.warning('Please enter valid code');
+      }
     });
   }
 }
